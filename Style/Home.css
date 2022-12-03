@@ -79,8 +79,8 @@ footer
 
 .img-size
 {
-    width:500px;
-    max-height:100px;
+    width:150px;
+    max-height:160px;
 }
 
 .soc-1
@@ -93,10 +93,25 @@ li
     cursor: pointer;
 }
 
-.im2
+.event
 {
-    width:100px !important;
-    min-height:100px !important;
+    cursor: pointer !important;
+    transition:0.4s ease-in-out all;
+}
+
+
+.event:hover
+{
+    /* width:160px; */
+    font-size:1.3rem;
+    /* border:1px solid red; */
+    border-radius:10px;
+}
+
+
+.border-dark
+{
+    border-color:rgb(73, 73, 73) !important;
 }
 
 
