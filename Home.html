@@ -22,8 +22,10 @@
     <link rel="stylesheet" href="Style/Home.css">
     <title>The pet Store</title>
   </head>
-  <body>
-    <header class="container-fluid position-sticky shadow">
+  <body class="d-flex flex-column align-items-center ">
+
+    <!--Header menu start-->
+    <header class="container-fluid shadow">
        <div class="row justify-content-between pt-3">
           <!--Logo-->
           <img class="col-3 col-sm-2 col-md-2 col-lg-2 col-xl-2 ms-xl-5 ms-4 img-fluid" src="Assets/Logo.jpeg" alt="Logo">
@@ -35,7 +37,7 @@
           </div>
 
           <!--Social Icons Start-->
-          <ul class="row col-12 col-md-3 col-lg-2 col-xl-2 pt-2 pb-2 ps-1 pe-1 mt-2 mt-sm-0 ms-0 me-md-4 list-unstyled align-self-center text-center social-icons">
+          <ul class="row col-12 col-md-3 col-lg-2 col-xl-1 pt-2 pb-2 ps-0 pe-3 mt-2 mt-sm-0 ms-0 me-md-4 list-unstyled align-self-center text-center social-icons">
             <li class="col-4 text-center">
               <a href="https://www.facebook.com/profile.php?id=100009264898126">
                 <i class="fa-brands fa-facebook icon-color"></i>
@@ -57,7 +59,7 @@
 
         <!--Navbar Start-->
        <nav>
-         <ul class="row justify-content-between list-unstyled pt-xl-1 pb-xl-1 ps-xl-3 pe-xl-3 navbar-color">
+         <ul class="row nav-fill list-unstyled pt-xl-1 pb-xl-1 ps-xl-3 pe-xl-3 navbar-color">
            <li class="col-12 col-sm-2 text-center pt-2 pb-2">Home</li>
            <li class="col-12 col-sm-2 text-center pt-2 pb-2">Pet Store</li>
            <li class="col-12 col-sm-2 text-center pt-2 pb-2">Buy/Sell</li>
@@ -68,7 +70,114 @@
        </nav>
         <!--Navbar End-->
       </header>
+  <!--Header menu End-->
 
+  <main class="flex-fill">
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <img id="im1" src="#" class="d-block w-100" alt="Image">
+        </div>
+
+        <div class="carousel-item">
+          <img id="im2" src="#" class="d-block w-100" alt="Image">
+        </div>
+
+        <div class="carousel-item">
+          <img id="im3" src="#" class="d-block w-100" alt="Image">
+        </div>
+
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+  </main>
+
+  <!--Footer content Started-->
+      <footer class="row w-100 justify-content-center pt-5">
+
+        <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+          <div class="d-flex flex-column text-center">
+            <h1 class="col-12">Why us?</h1>
+            <p class="col-12">
+               There was a time when this wouldn't have bothered her. The fact that it did actually
+               bother her bothered her even more. What had changed in her life that such a small 
+               thing could annoy her so much for the entire day? She knew it was ridiculous that 
+               she even took notice of it, yet she was still obsessing over it as she tried to 
+               fall asleep.
+            </p>
+          </div>
+        </div>
+
+        <ul class="row col-4 col-sm-4 col-md-2 col-lg-2 col-xl-2 list-unstyled">
+          <h3 class="col-12">Pages</h3>
+          <li class="col-12">Home</li>
+          <li class="col-12">Pet Store</li>
+          <li class="col-12">Buy/Sell</li>
+          <li class="col-12">Pet veterianary</li>
+          <li class="col-12">About us</li>
+          <li class="col-12">Contacts</li>
+        </ul>
+
+        <ul class="row col-4 col-sm-4 col-md-2 col-lg-2 col-xl-2 list-unstyled">
+          <h3 class="col-12">News</h3>
+          <li class="col-12">Home</li>
+          <li class="col-12">Pet Store</li>
+          <li class="col-12">Buy/Sell</li>
+          <li class="col-12">Pet veterianary</li>
+          <li class="col-12">About us</li>
+          <li class="col-12">Contacts</li>
+        </ul>
+
+        <ul class="row col-4 col-sm-4 col-md-2 col-lg-2 col-xl-2 list-unstyled">
+          <h3 class="col-12">Posts</h3>
+          <li class="col-12">Home</li>
+          <li class="col-12">Pet Store</li>
+          <li class="col-12">Buy/Sell</li>
+          <li class="col-12">Pet veterianary</li>
+          <li class="col-12">About us</li>
+          <li class="col-12">Contacts</li>
+        </ul>
+
+        <!--Social Icons Start-->
+          <ul class="row col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3  pt-2 pb-2 ps-0 pe-3 list-unstyled justify-content-center soc-1 social-icons">
+            <li class="col-2 ms-1 me-1  text-center">
+              <a href="https://www.facebook.com/profile.php?id=100009264898126">
+                <i class="fa-brands fa-facebook icon-color"></i>
+              </a>
+            </li>
+            <li class="col-2 ms-1 me-1 text-center">
+              <a href="https://github.com/SameerShahid1">
+                <i class="fa-brands fa-github icon-color"></i>
+              </a>
+            </li>
+            <li class="col-2 ms-1 me-1 text-center">
+              <a href="">
+                <i class="fa-brands fa-linkedin icon-color"></i>
+              </a>
+            </li>
+          </ul>
+          <!--Social Icons Emd-->
+
+        <small class="col-12 text-center bg-dark text-white">CopyRight@2023 The Pet Store</small>
+      </footer>
+      <!--Main content End-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
-  </body>
+<script src="./JavaScript/Home.js"></script>
+</body>
 </html>

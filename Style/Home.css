@@ -6,6 +6,17 @@
     transition: 0.5s ease-in-out all;
 }
 
+body
+{
+    min-height:100vh;
+}
+
+footer
+{
+    background-color: #404040;
+    color: white;
+}
+
 
 .icon-color
 {
@@ -18,7 +29,6 @@
 .icon-color:hover
 {
     color:black !important;
-    font-size:35px;
 }
 
 .navbar-color
@@ -65,6 +75,28 @@
 {
     background-color: #f84646;
     border-radius:7px;
+}
+
+.img-size
+{
+    width:500px;
+    max-height:100px;
+}
+
+.soc-1
+{
+    background-color:transparent !important;
+}
+
+li
+{
+    cursor: pointer;
+}
+
+.im2
+{
+    width:100px !important;
+    min-height:100px !important;
 }
 
 
