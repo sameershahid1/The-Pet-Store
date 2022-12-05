@@ -1,0 +1,32 @@
+
+#showcase{
+    background: url( ../img/kindpng_7271614.png);
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    min-height: 40vh;
+}
+
+#showcase .container {
+    text-align: center;
+    margin-top: 150px;
+}
+ul {
+    list-style: none;
+  }
+  
+  ul li::before {
+    content: "\2022";
+    color: red;
+    font-weight: bold; 
+    display: inline-block; 
+    width: 1em; 
+    margin-left: 1em; 
+  }
+ 
+
+.barr 
+{
+    background-color: rgb(218, 214, 214);
+}

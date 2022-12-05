@@ -18,7 +18,10 @@ const MoverMedicine=()=>{
     window.location.href="./Veterianary.html";
 }
 
-
+const MoveAboutus=()=>
+{
+    window.location.href="./About-us.html";
+}
 
 const Shifter=(ID)=>
 {
