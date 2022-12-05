@@ -1,12 +1,10 @@
-
 const Data=[];
-
 const Creater=(ID)=>{
     return {
         id:ID,
         name:"Bruffn",
         url:`./Assets/MedicinePics/M${ID}.jpeg`,
-        price:`$${Math.floor(Math.random()*50)}`,
+        price:`PKR ${Math.floor(Math.random()*50)}`,
         type:"Medicine"
     };
 }
@@ -35,19 +33,20 @@ Data[16].name="Carief DS";
 Data[17].name="Angumental";
 Data[18].name="Pyodine";
 
+
 const ProductCreator=(Data)=>
 {
-    const Product=`
-    <div class='me-4 ms-4 me-lg-5 ms-lg-5 me-xl-5 ms-xl-5 me-md-5 me-md-5 me-sm-4 me-sm-4 card text-center'>
-     <img class='card-img-bottom ms-1 p-2 img-size' src=${Data.url} alt=${Data.type}>
-     <div class='p-0 pb-2 card-body'>
-       <h5 class="card-title">${Data.name}</h5>
-       <p class="card-text">${Data.price}</p>
-       <button class="btn btn-primary ps-4 pe-4">Buy</button>
-     </div>
-    </div>
-    `;
-    return Product;
+  const Product=`
+  <div onclick="Shifter('Product${Data.id}')" style="cursor:pointer;" id="Product${Data.id}" class='me-4 ms-4 me-lg-5 ms-lg-5 me-xl-5 ms-xl-5 me-md-5 me-md-5 me-sm-4 me-sm-4 card text-center'>
+   <img id='${Data.id}' class='card-img-bottom ms-1 p-2 img-size' src=${Data.url} alt=${Data.type}>
+   <div class='p-0 pb-2 card-body'>
+     <h5 class="card-title">${Data.name}</h5>
+     <p class="card-text">${Data.price}</p>
+     <button class="btn btn-primary ps-4 pe-4">Buy</button>
+   </div>
+  </div>
+  `;
+  return Product;
 }
 
 

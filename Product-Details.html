@@ -20,6 +20,7 @@
     />
     <script src="https://kit.fontawesome.com/04f9b2276c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./Style/Home.css">
+    <link rel="stylesheet" href="./Style/Product-Details.css">
     <title>The Pet Store</title>
 </head>
 <body class="d-flex flex-column align-items-center ">
@@ -71,21 +72,68 @@
          <!--Navbar End-->
        </header>
    <!--Header menu End-->
- 
+
+<!--Main Start-->
    <main class="flex-fill">
+
+       <h2 class="Title">Product Name</h2>
+       <div class="Product-container">
+
+         <!--Product Image Start-->
+         <div class="Product-Image">
+           <img class="img-size" src="./Assets/MedicinePics/M1.jpeg" alt="">
+         </div>
+         <!--Product Image End-->
  
-    <!--Latest product Start-->
-     <div class="text-center mb-3 mt-3">
-       <h1>You can buy any pet Medicine you desire here.</h1>
-       <div id="Products" class="col-12 d-flex flex-wrap gap-2 align-items-center justify-content-center justify-content-sm-start justify-content-md-start justify-content-lg-start justify-content-xl-start border border gap-2 rounded-3 p-2 pt-3 shadow">
+         <!--Product Info Start-->
+         <div class="Product-Info">
+           <div>
+             <span>Product Price:</span>
+             <span class="input price">PKR 2500</span>
+           </div> 
+           
+           <div>
+             <span>Product Code:</span>
+             <span class="input">00112233</span>
+           </div>
+ 
+           <div>
+             <span>Product in Stock:</span>
+             <span class="input">Yes</span>
+           </div>
+ 
+           <div>
+             <span>Product Discount:</span>
+             <span class="input">20%</span>
+           </div>
+           
+           <div>
+             <span>Available Sizes: </span>
+             <span class="input">small, Medium, Large</span>            
+           </div>
+           
+           <div class="Product-Info__Quality">
+             <span>Quality: </span>
+             <input type="number" placeholder="0" name="Quality">
+           </div>
+
+           <!--Buy product Button-->
+           <button class="btn-buy" type="button">Buy</button>
+         </div>
+      </div>
+      <!--Product Info End-->          
+
+       <!-- Product Details Start-->
+       <div class="Product-Details">
+         <h3>Product Details</h3>
+         <p>Details of the Product</p>
        </div>
-    </div>
-   <!--Latest product End-->
- 
-   </main>
- 
-   <!--Footer content Started-->
-   <footer class="row w-100 justify-content-center pt-5">
+      <!--Product Details End-->
+</main>
+<!--Main End-->
+
+<!--Footer content Started-->
+<footer class="row w-100 justify-content-center pt-5">
  
      <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
            <div class="d-flex flex-column text-center">
@@ -149,12 +197,11 @@
              </li>
            </ul>
            <!--Social Icons Emd-->
- 
          <small class="col-12 text-center bg-dark text-white">CopyRight@2023 The Pet Store</small>
-   </footer>
-       <!--Main content End-->
+</footer>
+<!--Footer Start-->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
- <script src="./JavaScript/veterianary.js"></script>
+ <script src="./JavaScript/Product-Details.js"></script>
  <script src="./JavaScript/Controller.js"></script>
 </body>
 </html>

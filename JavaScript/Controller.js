@@ -19,3 +19,20 @@ const MoverMedicine=()=>{
 }
 
 
+
+const Shifter=(ID)=>
+{
+    const Product=document.getElementById(ID);
+
+    const Item={
+        id:Product.children[0].id,
+        type:Product.children[0].alt
+    }
+    localStorage.setItem("Product-ID",Item.id);
+    localStorage.setItem("Product-TYPE",Item.type);
+    window.location.href="./Product-Details.html";
+}
+
+
+
+
