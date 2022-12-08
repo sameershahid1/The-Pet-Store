@@ -23,6 +23,12 @@ const MoveAboutus=()=>
     window.location.href="./About-us.html";
 }
 
+const MoveContactUs=()=>
+{
+    window.location.href="./contact.html";
+}
+
+
 const Shifter=(ID)=>
 {
     const Product=document.getElementById(ID);
