@@ -5,8 +5,13 @@ $("#submit-btn").click(()=>{
     let email=$("#email").val();
     let phone=$("#phone").val();
     const Regexfname=/[A-Za-z]/;
-    const Regexlname=/(([a-z]|[A-Z]|[0-9])@{a-z}){9,}/;
-    const RegexPhone=/[+]92[1-9]*/;
+    const Regexemail=/(([a-z]|[A-Z]|[0-9])@{a-z}){9,}/;
+    const RegexPhone=/([+]92[1-9]){11,}/;
 
-    alert(RegexPhone.test(phone));
+
+
+    if(RegexPhone.test(phone)||Regexfname.test(fname)||Regexemail.test(email))
+    {
+        alert("You have wrong information on the form, that is why the forom ");
+    }
 })
