@@ -2,6 +2,7 @@
 //When the Content is loaded, it will show the Selective product Information
 const ShowingDataOnThePage=()=>
 {
+
 //Data of the animals
 const Data1=[
     {

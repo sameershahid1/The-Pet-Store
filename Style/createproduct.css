@@ -1,0 +1,16 @@
+.font-weight-size
+{
+    font-weight: bold;
+    font-size:1.3rem;
+}
+
+.resize-stop
+{
+    resize: none;
+}
+
+::placeholder
+{
+    text-align: center;
+}
+

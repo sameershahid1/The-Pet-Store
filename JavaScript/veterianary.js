@@ -42,7 +42,7 @@ const ProductCreator=(Data)=>
    <div class='p-0 pb-2 card-body'>
      <h5 class="card-title">${Data.name}</h5>
      <p class="card-text">${Data.price}</p>
-     <button class="btn btn-primary ps-4 pe-4">Buy</button>
+     <button class="btn btn-primary ps-4 pe-4">Show Details</button>
    </div>
   </div>
   `;
