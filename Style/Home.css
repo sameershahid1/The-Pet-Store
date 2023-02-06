@@ -119,7 +119,27 @@ li {
   font-size: 1.5rem;
 }
 
-@media screen and (max-width: 575px) {
-  .position-add-btn {
-  }
+.check
+{
+  border:1px solid red !important;
+}
+
+.container-width-1
+{
+  width:35vw !important;
+}
+.input-width
+{
+  width:30vw !important;
+
+}
+
+.text-red
+{
+  color: red !important;
+}
+
+.text-size
+{
+  font: size 2rem !important;
 }

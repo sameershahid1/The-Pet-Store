@@ -23,7 +23,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./Style/Home.css" />
-    <link rel="stylesheet" href="./Style/Product-Details.css" />
+    <link rel="stylesheet" href="./Style/createproduct.css" />
     <title>The Pet Store</title>
   </head>
   <body class="d-flex flex-column align-items-center">
@@ -84,70 +84,60 @@
         <ul
           class="row nav-fill list-unstyled pt-xl-1 pb-xl-1 ps-xl-3 pe-xl-3 navbar-color"
           id="nav-list"
-        >
-        </ul>
+        ></ul>
       </nav>
       <!--Navbar End-->
     </header>
     <!--Header menu End-->
 
-    <!--Main Start-->
-    <main class="flex-fill">
-      <div id="message-container"></div>
-      <h2 class="Title"></h2>
-      <div class="Product-container">
-        <!--Product Image Start-->
-        <div class="Product-Image">
-          <img class="img-size" id="product-img" src="#" alt="" />
-        </div>
-        <!--Product Image End-->
+    <main
+      class="flex-fill mt-4 mb-4 pt-4 pb-4 ps-3 pe-3 rounded-1 border border-2"
+    >
+      <!-- <div class="position-absolute ">You are able successfully abhe to login</div> -->
+      <!--Registeration form-->
+      <form
+        class="d-flex flex-column gap-3 align-items-center container-width-1"
+      >
+        <h1 class="text-center pt-0 pb-2 container-width-1">Sign-Up</h1>
+        <div  class="fw-bold text-size" id="message"></div>
+        <input
+          name="username"
+          id="username"
+          type="text"
+          class="form-control text-center pt-2 pb-2 input-width"
+          placeholder="Name"
+        />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="form-control w-75 text-center pt-2 pb-2 input-width"
+          placeholder="example@gmail.com"
+        />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          class="form-control w-75 text-center pt-2 pb-2 input-width"
+          placeholder="Password"
+        />
 
-        <!--Product Info Start-->
-        <div class="Product-Info">
-          <div>
-            <span>Product Price:</span>
-            <span id="product-price" class="input price"></span>
-          </div>
-
-          <div>
-            <span>Product in Stock:</span>
-            <span id="product-in-stock" class="input"></span>
-          </div>
-
-          <div>
-            <span>Category:</span>
-            <span id="category" class="input"></span>
-          </div>
-
-          <div>
-            <span>Available Sizes: </span>
-            <span class="input">small, Medium, Large</span>
-          </div>
-
-          <div>
-            <span>Stock:</span>
-            <p id="product-stock" class="input">0</p>
-          </div>
-
-          <!--Buy product Button-->
-          <div class="d-flex justify-content-evenly gap-3 mt-3">
-            <button id="btn-buy" class="btn-buy btn" type="button">Buy</button>
-            <button id="btn-edit" class="btn-buy btn" type="button">
-              Edit
-            </button>
-          </div>
-        </div>
-      </div>
-      <!--Product Info End-->
-
-      <!-- Product Details Start-->
-      <div class="Product-Details">
-        <h3>Product Details</h3>
-        <p id="product-description"></p>
-      </div>
-      <!--Product Details End-->
+        <input
+          type="password"
+          name="conform_password"
+          id="conform_password"
+          class="form-control w-75 text-center pt-2 pb-2 input-width"
+          placeholder="Confirm-Password"
+        />
+        <button
+          type="button"
+          class="btn w-50 pt-2 pb-2 mt-2 btn-primary"
+          id="btn-sign-up"
+        >
+          Sign-Up
+        </button>
+      </form>
     </main>
-    <!--Main End-->
 
     <!--Footer content Started-->
     <footer class="row w-100 justify-content-center pt-5">
@@ -215,13 +205,14 @@
         </li>
       </ul>
       <!--Social Icons Emd-->
+
       <small class="col-12 text-center bg-dark text-white"
         >CopyRight@2023 The Pet Store</small
       >
     </footer>
-    <!--Footer Start-->
+    <!--Main content End-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
-    <script src="./JavaScript/Product-Details.js"></script>
     <script src="./JavaScript/Controller.js"></script>
+    <script src="./JavaScript/fromdata.js"></script>
   </body>
 </html>

@@ -22,10 +22,11 @@
       src="https://kit.fontawesome.com/04f9b2276c.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./Style/Home.css" />
-    <link rel="stylesheet" href="./Style/Product-Details.css" />
-    <title>The Pet Store</title>
+    <link rel="stylesheet" href="Style/Home.css" />
+    <link rel="stylesheet" href="./Style/createproduct.css" />
+    <title>The pet Store</title>
   </head>
+
   <body class="d-flex flex-column align-items-center">
     <!--Header menu start-->
     <header class="container-fluid shadow">
@@ -41,12 +42,7 @@
         <div
           class="row col-8 col-sm-7 col-md-5 col-lg-6 align-self-center position-change"
         >
-          <input
-            class="col-7 p-1"
-            id="search"
-            placeholder="Search"
-            type="text"
-          />
+          <input class="col-7 p-1" placeholder="Search" type="text" />
           <button
             class="col-4 col-sm-4 col-md-3 btn-info btns-color"
             id="btn-search"
@@ -91,63 +87,74 @@
     </header>
     <!--Header menu End-->
 
-    <!--Main Start-->
-    <main class="flex-fill">
-      <div id="message-container"></div>
-      <h2 class="Title"></h2>
-      <div class="Product-container">
-        <!--Product Image Start-->
-        <div class="Product-Image">
-          <img class="img-size" id="product-img" src="#" alt="" />
+    <main class="flex-fill d-flex flex-column align-items-center mt-4 mb-4">
+      <h1>Edit the Product</h1>
+      <!--This will take new product data from the user-->
+      <form name="new-product" class="d-flex flex-column gap-4 mt-2 p-3 style">
+        <div class="d-flex justify-content-sm-center align-items-center gap-4">
+          <label class="font-weight-size" for="name">Name</label>
+          <input
+            class="form-control text-center"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Product Name"
+          />
         </div>
-        <!--Product Image End-->
-
-        <!--Product Info Start-->
-        <div class="Product-Info">
-          <div>
-            <span>Product Price:</span>
-            <span id="product-price" class="input price"></span>
-          </div>
-
-          <div>
-            <span>Product in Stock:</span>
-            <span id="product-in-stock" class="input"></span>
-          </div>
-
-          <div>
-            <span>Category:</span>
-            <span id="category" class="input"></span>
-          </div>
-
-          <div>
-            <span>Available Sizes: </span>
-            <span class="input">small, Medium, Large</span>
-          </div>
-
-          <div>
-            <span>Stock:</span>
-            <p id="product-stock" class="input">0</p>
-          </div>
-
-          <!--Buy product Button-->
-          <div class="d-flex justify-content-evenly gap-3 mt-3">
-            <button id="btn-buy" class="btn-buy btn" type="button">Buy</button>
-            <button id="btn-edit" class="btn-buy btn" type="button">
-              Edit
-            </button>
-          </div>
+        <div class="d-flex justify-content-sm-center align-items-center gap-4">
+          <label class="font-weight-size" for="name">Category</label>
+          <select class="form-select" name="Category" id="Category">
+            <option value="Animal">Animal</option>
+            <option value="Medicine">Medicine</option>
+            <option value="Pet_Store">Pet_Store</option>
+          </select>
         </div>
-      </div>
-      <!--Product Info End-->
-
-      <!-- Product Details Start-->
-      <div class="Product-Details">
-        <h3>Product Details</h3>
-        <p id="product-description"></p>
-      </div>
-      <!--Product Details End-->
+        <div class="d-flex justify-content-sm-center align-items-center gap-4">
+          <label class="font-weight-size" for="price">Price</label>
+          <input
+            class="form-control text-center"
+            type="number"
+            id="price"
+            placeholder="PKR 0.00"
+          />
+        </div>
+        <div class="d-flex justify-content-sm-center align-items-center gap-4">
+          <label class="font-weight-size" for="stock">Stock</label>
+          <input
+            class="form-control text-center"
+            type="number"
+            id="stock"
+            placeholder="0"
+          />
+        </div>
+        <div class="d-flex justify-content-sm-center align-items-center gap-4">
+          <label class="font-weight-size text-center" for="image">Image</label>
+          <input
+            class="form-control"
+            accept=".jpeg,.jpg"
+            id="image"
+            type="file"
+          />
+        </div>
+        <div class="d-flex flex-column gap-2">
+          <label class="font-weight-size" for="description">Descrition</label>
+          <textarea
+            class="form-control resize-stop"
+            name="description"
+            id="description"
+            cols="40"
+            rows="4"
+          ></textarea>
+        </div>
+        <button
+          type="button"
+          id="btn-edit"
+          class="btn-primary btn mt-2 pt-2 pb-2"
+        >
+          Update Product
+        </button>
+      </form>
     </main>
-    <!--Main End-->
 
     <!--Footer content Started-->
     <footer class="row w-100 justify-content-center pt-5">
@@ -215,13 +222,14 @@
         </li>
       </ul>
       <!--Social Icons Emd-->
+
       <small class="col-12 text-center bg-dark text-white"
         >CopyRight@2023 The Pet Store</small
       >
     </footer>
-    <!--Footer Start-->
+    <!--Main content End-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
-    <script src="./JavaScript/Product-Details.js"></script>
+    <script src="./JavaScript/update_form.js"></script>
     <script src="./JavaScript/Controller.js"></script>
   </body>
 </html>

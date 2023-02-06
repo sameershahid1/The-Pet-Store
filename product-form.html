@@ -43,7 +43,11 @@
           class="row col-8 col-sm-7 col-md-5 col-lg-6 align-self-center position-change"
         >
           <input class="col-7 p-1" placeholder="Search" type="text" />
-          <button class="col-4 col-sm-4 col-md-3 btn-info btns-color">
+          <button
+            class="col-4 col-sm-4 col-md-3 btn-info btns-color"
+            id="btn-search"
+            type="button"
+          >
             Search
           </button>
         </div>
@@ -53,12 +57,12 @@
           class="row col-12 col-md-3 col-lg-2 col-xl-1 pt-2 pb-2 ps-0 pe-3 mt-2 mt-sm-0 ms-0 me-md-4 list-unstyled align-self-center text-center social-icons"
         >
           <li class="col-4 text-center">
-            <a href="https://www.facebook.com/profile.php?id=100009264898126">
+            <a href="">
               <i class="fa-brands fa-facebook icon-color"></i>
             </a>
           </li>
           <li class="col-4 text-center">
-            <a href="https://github.com/SameerShahid1">
+            <a href="">
               <i class="fa-brands fa-github icon-color"></i>
             </a>
           </li>
@@ -75,46 +79,8 @@
       <nav>
         <ul
           class="row nav-fill list-unstyled pt-xl-1 pb-xl-1 ps-xl-3 pe-xl-3 navbar-color"
+          id="nav-list"
         >
-          <li
-            onclick="MoveHome()"
-            class="col-12 col-sm-2 text-center pt-2 pb-2"
-          >
-            Home
-          </li>
-          <li
-            onclick="MoveStore()"
-            class="col-12 col-sm-2 text-center pt-2 pb-2"
-          >
-            Pet Store
-          </li>
-          <li onclick="MoveBuy()" class="col-12 col-sm-2 text-center pt-2 pb-2">
-            Buy/Sell
-          </li>
-          <li
-            onclick="MoverMedicine()"
-            class="col-12 col-sm-2 text-center pt-2 pb-2"
-          >
-            Pet veterianary
-          </li>
-          <li
-            onclick="MoveAboutus()"
-            class="col-12 col-sm-2 text-center pt-2 pb-2"
-          >
-            About us
-          </li>
-          <li
-            onclick="MoveContactUs()"
-            class="col-12 col-sm-2 text-center pt-2 pb-2"
-          >
-            Contacts
-          </li>
-          <li
-            onclick="MoveCreateProduct()"
-            class="col-12 col-sm-2 text-center pt-2 pb-2"
-          >
-            Sell-Product
-          </li>
         </ul>
       </nav>
       <!--Navbar End-->
@@ -124,19 +90,20 @@
     <main class="flex-fill d-flex flex-column align-items-center mt-4 mb-4">
       <h1>New Product Form</h1>
       <!--This will take new product data from the user-->
-      <form name="new-product" class="d-flex flex-column gap-4 mt-2 p-3 style">
+      <form name="new-product" enctype="multipart/form-data" class="d-flex flex-column gap-4 mt-2 p-3 style">
         <div class="d-flex justify-content-sm-center align-items-center gap-4">
           <label class="font-weight-size" for="name">Name</label>
           <input
             class="form-control text-center"
             type="text"
+            id="name"
             name="name"
             placeholder="Product Name"
           />
         </div>
         <div class="d-flex justify-content-sm-center align-items-center gap-4">
           <label class="font-weight-size" for="name">Category</label>
-          <select class="form-select" name="product-type" id="product-type">
+          <select class="form-select" name="Category" id="Category">
             <option value="Animal">Animal</option>
             <option value="Medicine">Medicine</option>
             <option value="Pet_Store">Pet_Store</option>
@@ -147,6 +114,7 @@
           <input
             class="form-control text-center"
             type="number"
+            id="price"
             placeholder="PKR 0.00"
           />
         </div>
@@ -155,12 +123,13 @@
           <input
             class="form-control text-center"
             type="number"
+            id="stock"
             placeholder="0"
           />
         </div>
         <div class="d-flex justify-content-sm-center align-items-center gap-4">
           <label class="font-weight-size text-center" for="image">Image</label>
-          <input class="form-control" type="file" />
+          <input class="form-control" id="image" accept=".jpeg,.jpg" type="file" />
         </div>
         <div class="d-flex flex-column gap-2">
           <label class="font-weight-size" for="description">Descrition</label>
@@ -172,7 +141,7 @@
             rows="4"
           ></textarea>
         </div>
-        <button type="button" class="btn-primary btn mt-2 pt-2 pb-2">
+        <button type="button" id="btn" class="btn-primary btn mt-2 pt-2 pb-2">
           Sell Product
         </button>
       </form>
@@ -228,12 +197,12 @@
         class="row col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 pt-2 pb-2 ps-0 pe-3 list-unstyled justify-content-center soc-1 social-icons"
       >
         <li class="col-2 ms-1 me-1 text-center">
-          <a href="https://www.facebook.com/profile.php?id=100009264898126">
+          <a href="">
             <i class="fa-brands fa-facebook icon-color"></i>
           </a>
         </li>
         <li class="col-2 ms-1 me-1 text-center">
-          <a href="https://github.com/SameerShahid1">
+          <a href="">
             <i class="fa-brands fa-github icon-color"></i>
           </a>
         </li>
@@ -252,5 +221,6 @@
     <!--Main content End-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
     <script src="./JavaScript/Controller.js"></script>
+    <script src="./JavaScript/fromdata.js"></script>
   </body>
 </html>
