@@ -1,133 +1,88 @@
-//When the Content is loaded, it will show the Selective product Information
-const ShowingDataOnThePage = () => {
-  //Data of the animals
-  const Data1 = [
-    {
-      id: 1,
-      name: "Persian Cat",
-      url: "https://www.agentpet.com/storage/pets/w0FMMINmNXYe1dsTucDzqV6xXqxzweG71wtjmRgL.png",
-      price: "PKR 20",
-      type: "Animal",
-    },
-  ];
+const handelingProductDetail = async () => {
+  const id = window.localStorage.getItem("Product-ID");
+  const idForm = new FormData();
+  idForm.append("product-id", id);
 
-  const Creater1 = (ID) => {
-    return {
-      id: ID,
-      name: "Persian Cat",
-      url: `./Assets/Buy-Sell-Products/A${ID - 1}.jpeg`,
-      price: `PKR ${Math.floor(Math.random() * 3500)}`,
-      type: "Animal",
-    };
-  };
-
-  for (let i = 2; i <= 9; i++) {
-    Data1.push(Creater1(i));
-  }
-
-  //Data of the Medicine
-  const Data2 = [];
-  const Creater2 = (ID) => {
-    return {
-      id: ID,
-      name: "Bruffn",
-      url: `./Assets/MedicinePics/M${ID}.jpeg`,
-      price: `PKR ${Math.floor(Math.random() * 50)}`,
-      type: "Medicine",
-    };
-  };
-
-  for (let i = 1; i <= 19; i++) {
-    Data2.push(Creater2(i));
-  }
-
-  Data2[0].name = "Hepa-Merz";
-  Data2[1].name = "Azomax";
-  Data2[2].name = "Flagl";
-  Data2[4].name = "Mycitractic";
-  Data2[5].name = "Tobrex";
-  Data2[6].name = "Dektrain";
-  Data2[7].name = "Antisenptic Wipe";
-  Data2[8].name = "Suger Sirp";
-  Data2[9].name = "Hydrozole";
-  Data2[10].name = "Hydrozole";
-  Data2[11].name = "Flagl";
-  Data2[12].name = "20-meter Injection";
-  Data2[13].name = "10-meter Injection";
-  Data2[14].name = "Set of Injection";
-  Data2[15].name = "Veloself";
-  Data2[16].name = "Carief DS";
-  Data2[17].name = "Angumental";
-  Data2[18].name = "Pyodine";
-
-  //Data of the Pet Store
-  const Data3 = [];
-  const Buy_Sell = document.getElementById("Products");
-
-  const Creater3 = (ID) => {
-    return {
-      id: ID,
-      name: "",
-      url: `./Assets/Animal-Products/P${ID}.jpeg`,
-      price: `PKR ${Math.floor(Math.random() * 100)}`,
-      type: "Pet_Store",
-    };
-  };
-
-  for (let i = 1; i <= 20; i++) {
-    Data3.push(Creater3(i));
-  }
-
-  Data3[0].name = "Cat Bed";
-  Data3[1].name = "Cat Bed";
-  Data3[2].name = "Cat Bed";
-  Data3[3].name = "Toy";
-  Data3[4].name = "Doramon Cat Bed";
-  Data3[5].name = "House";
-  Data3[6].name = "Beds";
-  Data3[7].name = "Toy";
-  Data3[8].name = "Cat pot";
-  Data3[9].name = "Cat Pot";
-  Data3[10].name = "Cat Pot";
-  Data3[11].name = "Cat bag";
-  Data3[12].name = "Cat Pot";
-  Data3[13].name = "Cat Vaccine";
-  Data3[14].name = "Cat Vaccine";
-  Data3[15].name = "Cat Vaccine";
-  Data3[16].name = "Cat Vaccine";
-  Data3[17].name = "Panadole";
-  Data3[18].name = "Drontal";
-  Data3[19].name = "Napi";
-
-  const MixBreed = {
-    Animal: Data1,
-    Medicine: Data2,
-    Pet_Store: Data3,
-  };
-
-  const id = localStorage.getItem("Product-ID");
-  const type = localStorage.getItem("Product-TYPE");
-  console.log(MixBreed[type][id - 1]);
-
-  document.querySelector(".Title").textContent = MixBreed[type][id - 1].name;
-  document.querySelector(".img-size").src = MixBreed[type][id - 1].url;
-  document.querySelector(".price").textContent = MixBreed[type][id - 1].price;
-};
-
-const btnBuy = document.getElementById("btn-buy");
-const buyingMessage = () => {
-  const messageContainer = document.getElementById("message-container");
-  messageContainer.innerHTML = `
- <div class='d-flex flex-column align-items-center position-absolute start-0 end-0 top-50 p-3 text-center message'>
- <p class='mt-2'>Total-Price:PKR 44</p>
- <p>Thank you for buying this product, hope you have a greath time.</p>
- <button id='btn-ok' class='btn btn-primary'>Ok</button>
-</div>`;
-  const btnOk = document.getElementById("btn-ok");
-  btnOk.addEventListener("click", () => {
-    messageContainer.innerHTML = "";
+  const raw = await fetch("/back_end/product_detail.php", {
+    method: "POST",
+    body: idForm,
   });
+
+  const Info = await raw.json();
+  console.log(Info);
+
+  if (Info.status) {
+    const data = Info.data;
+
+    const title = document.querySelector(".Title");
+    const price = document.getElementById("product-price");
+    const inStock = document.getElementById("product-in-stock");
+    const stock = document.getElementById("product-stock");
+    const category = document.getElementById("category");
+    const img = document.getElementById("product-img");
+    const description = document.getElementById("product-description");
+    const btnBuy = document.getElementById("btn-buy");
+
+    data.Stock = parseInt(data.Stock);
+    data.Price = parseInt(data.Price);
+
+    title.textContent = data.Name;
+    price.textContent = "PKR " + String(data.Price);
+    stock.textContent = data.Stock;
+    inStock.textContent = data.Stock == 0 ? "NO" : "YES";
+    category.textContent = data.Type;
+    img.src = data.image;
+    description.textContent = data.Description;
+
+    const buyingMessage = async () => {
+      const updateForm = new FormData();
+      const updateStock = data.Stock - 1;
+      updateForm.append("id", id);
+
+      if (data.Stock > 1) {
+        updateForm.append("stock", updateStock);
+      }
+
+      const updateBody = {
+        method: "POST",
+        body: updateForm,
+      };
+
+      const updateUrl = "/back_end/update_product_stock.php";
+      const deleteUrl = "/back_end/remove_product.php";
+
+      const raw = await fetch(
+        data.stock > 1 ? updateUrl : deleteUrl,
+        updateBody
+      );
+
+      stock.textContent = data.stock - 1;
+      const messageContainer = document.getElementById("message-container");
+
+      messageContainer.innerHTML = `
+     <div class='d-flex flex-column align-items-center position-absolute start-0 end-0 top-50 p-3 text-center message'>
+        <p class='mt-2'>Total-Price:PKR ${data.Price}</p>
+        <p>Thank you for buying this product, hope you have a greath time.</p>
+        <button id='btn-ok' class='btn btn-primary'>Ok</button>
+     </div>`;
+
+      const btnOk = document.getElementById("btn-ok");
+      btnOk.addEventListener("click", () => {
+        messageContainer.innerHTML = "";
+      });
+    };
+
+    btnBuy.addEventListener("click", buyingMessage);
+
+    const btn_edit = document.getElementById("btn-edit");
+
+    const upateForm = () => {
+      window.localStorage.setItem("edit-product-id", data.ID);
+      window.location.href = "./edit_form.html";
+    };
+
+    btn_edit.addEventListener("click", upateForm);
+  }
 };
 
-window.addEventListener("DOMContentLoaded", ShowingDataOnThePage);
-btnBuy.addEventListener("click", buyingMessage);
+window.addEventListener("DOMContentLoaded", handelingProductDetail);
